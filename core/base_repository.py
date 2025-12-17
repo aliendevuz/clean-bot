@@ -1,6 +1,7 @@
 import aiosqlite
 
 
+# only for sqlite
 class BaseRepository:
     def __init__(self, db_path: str):
         self.__db_path = db_path
