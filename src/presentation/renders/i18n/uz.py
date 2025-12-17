@@ -44,4 +44,11 @@ UZ = {
     "lang_uz": "🇺🇿 O'zbekcha",
     "lang_en": "🇬🇧 English",
     "lang_ru": "🇷🇺 Русский",
+    
+    # Statistika
+    "statistics": "📈 Statistika",
+    "statistics_title": "📈 Statistika\n\n👤 {name}\n\n",
+    "statistics_summary": "📊 Umumiy natijalar:\n• Jami o'yinlar: {total_games}\n• To'g'ri javoblar: {correct}/{total} ({percent}%)\n",
+    "statistics_no_data": "📈 Statistika\n\nHali natijalar mavjud emas. Mashq qilishni boshlang!",
+    "statistics_chart_caption": "📊 Oxirgi {days} kunlik natijalar",
 }

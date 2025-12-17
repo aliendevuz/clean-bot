@@ -18,6 +18,7 @@ from src.presentation.handlers import (
     language_router,
     navigation_router,
     quiz_router,
+    statistics_router,
     name_input_router,
 )
 
@@ -110,9 +111,10 @@ async def run_bot():
     # Router'larni qo'shish
     dp.include_router(start_router)
     dp.include_router(language_router)
-    dp.include_router(navigation_router)
+    dp.include_router(statistics_router)  # navigation dan oldin!
     dp.include_router(quiz_router)
     dp.include_router(name_input_router)
+    dp.include_router(navigation_router)
     
     # Botni ishga tushirish
     print("🤖 Bot ishga tushdi...")

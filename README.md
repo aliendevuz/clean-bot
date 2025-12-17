@@ -5,10 +5,6 @@ Eng toza usulda bot yasash ustida tadqiqot o'tkazish
 # Project Structure
 
 ```python
-core/ # bu yerda bot yasash uchun base funksiyalarni yozib olaman
-  base_repository.py
-  nav_stack_manager.py
-  state_manager.py
 src/
   config/
     env.py # dotenvdan ma'lumot olish
@@ -25,7 +21,7 @@ src/
       user.py # misol sifatida user repo ni oldik
       *.py # qolgan modellar
     repositories/ # repository interfacelari
-      user_repo.py # base_repository asosida repository interface (qaytaraman bu haqiqiy MVVM emas, shuning uchun core qismiga bog'lanishini normal)
+      user_repo.py # repository interface (qaytaraman bu haqiqiy MVVM emas, shuning uchun core qismiga bog'lanishini normal)
       *_repo.py # boshqa repo interfacelar
     services/ # usecasega o'xshab amal bajaradigan qismi
       user_service.py # usecasedan farqli o'laroq barcha usecaselarni bitta faylda jamlaydi

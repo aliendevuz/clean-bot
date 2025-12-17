@@ -37,3 +37,12 @@ class ProgressRepositoryImpl(ProgressRepository):
         """User ning ma'lum operatsiya bo'yicha barcha progressini olish."""
         rows = await self.db.select_by_user_and_operation(user_id, operation)
         return [Progress.from_row(row) for row in rows]
+
+    async def get_user_statistics(self, user_id: int, days: int = 30) -> List[Progress]:
+        """User ning oxirgi N kunlik barcha natijalarini olish."""
+        rows = await self.db.select_user_statistics(user_id, days)
+        return [Progress.from_row(row) for row in rows]
+
+    async def get_user_total_stats(self, user_id: int) -> dict:
+        """User ning umumiy statistikasini olish."""
+        return await self.db.select_user_total_stats(user_id)

@@ -30,6 +30,9 @@ def home_keyboard(i18n: I18n) -> InlineKeyboardMarkup:
             InlineKeyboardButton(text=i18n.get("division"), callback_data="op:division"),
         ],
         [
+            InlineKeyboardButton(text=i18n.get("statistics"), callback_data="page:statistics"),
+        ],
+        [
             InlineKeyboardButton(text=i18n.get("settings"), callback_data="page:settings"),
         ],
     ])

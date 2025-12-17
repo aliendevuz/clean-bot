@@ -169,3 +169,11 @@ class QuizService:
         """Level uchun savollar sonini olish."""
         config = self.get_level_config(level)
         return config.questions_count
+
+    async def get_user_statistics(self, user_id: int, days: int = 30) -> List[Progress]:
+        """User ning oxirgi N kunlik natijalarini olish."""
+        return await self.progress_repo.get_user_statistics(user_id, days)
+
+    async def get_user_total_stats(self, user_id: int) -> dict:
+        """User ning umumiy statistikasini olish."""
+        return await self.progress_repo.get_user_total_stats(user_id)

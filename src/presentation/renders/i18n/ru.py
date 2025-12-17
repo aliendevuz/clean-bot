@@ -44,4 +44,11 @@ RU = {
     "lang_uz": "🇺🇿 O'zbekcha",
     "lang_en": "🇬🇧 English",
     "lang_ru": "🇷🇺 Русский",
+    
+    # Статистика
+    "statistics": "📈 Статистика",
+    "statistics_title": "📈 Статистика\n\n👤 {name}\n\n",
+    "statistics_summary": "📊 Общие результаты:\n• Всего игр: {total_games}\n• Правильных ответов: {correct}/{total} ({percent}%)\n",
+    "statistics_no_data": "📈 Статистика\n\nРезультатов пока нет. Начните практику!",
+    "statistics_chart_caption": "📊 Результаты за последние {days} дней",
 }

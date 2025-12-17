@@ -44,4 +44,11 @@ EN = {
     "lang_uz": "🇺🇿 O'zbekcha",
     "lang_en": "🇬🇧 English",
     "lang_ru": "🇷🇺 Русский",
+    
+    # Statistics
+    "statistics": "📈 Statistics",
+    "statistics_title": "📈 Statistics\n\n👤 {name}\n\n",
+    "statistics_summary": "📊 Overall results:\n• Total games: {total_games}\n• Correct answers: {correct}/{total} ({percent}%)\n",
+    "statistics_no_data": "📈 Statistics\n\nNo results yet. Start practicing!",
+    "statistics_chart_caption": "📊 Results for the last {days} days",
 }

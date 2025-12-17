@@ -41,10 +41,19 @@ async def on_page_navigate(callback: CallbackQuery, state_manager, user_language
         await callback.answer("Unknown page")
         return
     
-    await callback.message.edit_text(
-        text=render.get_text(),
-        reply_markup=render.get_keyboard()
-    )
+    # Agar xabar rasm bo'lsa (statistika sahifasidan qaytganda)
+    # edit_text ishlamaydi, edit_caption ishlatamiz
+    if callback.message.photo:
+        await callback.message.delete()
+        await callback.message.answer(
+            text=render.get_text(),
+            reply_markup=render.get_keyboard()
+        )
+    else:
+        await callback.message.edit_text(
+            text=render.get_text(),
+            reply_markup=render.get_keyboard()
+        )
     await callback.answer()
 
 

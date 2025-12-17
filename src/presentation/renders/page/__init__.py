@@ -5,6 +5,7 @@ from .language import LanguagePageRender
 from .level_list import LevelListPageRender
 from .question import QuestionPageRender
 from .result import ResultPageRender
+from .statistics import StatisticsPageRender
 
 __all__ = [
     "HomePageRender",
@@ -13,4 +14,5 @@ __all__ = [
     "LevelListPageRender",
     "QuestionPageRender",
     "ResultPageRender",
+    "StatisticsPageRender",
 ]

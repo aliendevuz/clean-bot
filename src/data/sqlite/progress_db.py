@@ -80,3 +80,32 @@ class ProgressDatabase:
             (user_id, operation)
         )
         return await cursor.fetchall()
+
+    async def select_user_statistics(self, user_id: int, days: int = 30) -> List[tuple]:
+        """User ning oxirgi N kunlik natijalarini olish."""
+        cursor = await self.connection.execute(
+            """SELECT id, user_id, operation, level, correct_answers, total_questions, completed_at
+               FROM progress
+               WHERE user_id = ? AND completed_at >= datetime('now', ?)
+               ORDER BY completed_at ASC""",
+            (user_id, f'-{days} days')
+        )
+        return await cursor.fetchall()
+
+    async def select_user_total_stats(self, user_id: int) -> dict:
+        """User ning umumiy statistikasini olish."""
+        cursor = await self.connection.execute(
+            """SELECT 
+                   COUNT(*) as total_games,
+                   COALESCE(SUM(correct_answers), 0) as total_correct,
+                   COALESCE(SUM(total_questions), 0) as total_questions
+               FROM progress
+               WHERE user_id = ?""",
+            (user_id,)
+        )
+        row = await cursor.fetchone()
+        return {
+            "total_games": row[0],
+            "total_correct": row[1],
+            "total_questions": row[2]
+        }
