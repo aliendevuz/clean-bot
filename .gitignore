@@ -1,5 +1,7 @@
 **/__pycache__
 
+# local.db
+
 .vscode
 
 venv
